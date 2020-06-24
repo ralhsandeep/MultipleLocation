@@ -3,7 +3,7 @@ package com.example.multiplelocations;
 public class MyLatLng {
 
     private double latitude;
-    private double longtude;
+    private double longitude;
 
     public MyLatLng() {
     }
@@ -16,11 +16,11 @@ public class MyLatLng {
         this.latitude = latitude;
     }
 
-    public double getLongtude() {
-        return longtude;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLongtude(double longtude) {
-        this.longtude = longtude;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

@@ -88,8 +88,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         buildLocationRequest();
                         buildLocationCallback();
                         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapsActivity.this);
-                        settingGeoFire();
                         initArea();
+                        settingGeoFire();
+
                         //settingGeoFire();
                     }
                     @Override
@@ -110,6 +111,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .child("MyCity");
 
         listener = this;
+
+
         //Load From Firebase
         myCity.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -131,9 +134,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         myCity.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-
-
                 //update dangerous area list
                 List<MyLatLng> latLngList = new ArrayList<>();
                 for (DataSnapshot locationSnapshot : snapshot.getChildren()) {
@@ -142,6 +142,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 listener.OnLoadLocationSuccess(latLngList);
                 //Clear map and add again
+
+
 
             }
 
@@ -335,7 +337,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void OnLoadLocationSuccess(List<MyLatLng> latLngs) {
         dangerousArea = new ArrayList<>();
         for (MyLatLng myLatLng : latLngs) {
-            LatLng convert = new LatLng(myLatLng.getLatitude(), myLatLng.getLongtude());
+            LatLng convert = new LatLng(myLatLng.getLatitude(), myLatLng.getLongitude());
             dangerousArea.add(convert);
         }
 
