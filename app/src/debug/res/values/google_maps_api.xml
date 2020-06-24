@@ -20,5 +20,5 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCtDPnnl0cUA5XsjWLFr1bzhw01rXeZL4U</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDJrk339oh97fq-fskjSvX0yvfUnGgSDmY</string>
 </resources>
